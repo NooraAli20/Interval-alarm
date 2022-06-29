@@ -1,0 +1,304 @@
+
+#app {
+	background-color: #000;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	width: 600px;
+	display: flex;
+	flex-direction: column;
+}
+ 
+ #menuToggle
+ {
+   display: block;
+   position: relative;
+   top: 50px;
+   left: 50px;
+   z-index: 1;
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menuToggle a
+ {
+   text-decoration: none;
+   color: #232323;
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle a:hover
+ {
+   color: black;
+ }
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ /*
+  * Just a quick hamburger
+  */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: black;
+   border-radius: 3px;
+   z-index: 1;
+   transform-origin: 4px 0px;
+   transition:  transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+				background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+				opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+ }
+ 
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #232323;
+ }
+ 
+ input[check]{
+	 background-image: '../SVGs/navicon-black.svg';
+ }
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #NavBar
+ {
+   position: absolute;
+   margin: -100px 0 0 -50px;
+   padding: 50px;
+   padding-top: 125px;
+   
+
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   
+   transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+ #NavBar li
+ {
+   padding: 10px 0;
+   font-size: 22px;
+ }
+ 
+ /*
+  * And let's slide it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   transform: none;
+ }
+
+
+/* Navigation end */
+
+/* Math functions */
+$pi: 3.14159265359;
+$_precision: 10;
+
+@function radian($angle){
+		@return $angle * $pi / 180;
+}
+
+@function strip-units($number) {
+		@return $number / ($number * 0 + 1);
+}
+
+@function even($number){
+		$number: round($number);
+		@if strip-units($number)%2 != 0{
+				$number: $number + 1;
+		}
+		@return $number;
+}
+
+@function pow($base, $exp) {
+	$value: $base;
+	@if $exp > 1 {
+		@for $i from 2 through $exp {
+			$value: $value * $base;
+		}
+	}
+	@if $exp < 1{
+		@for $i from 0 through -$exp {
+			$value: $value / $base;
+		}
+	}
+	@return $value;
+}
+
+@function fact($num) {
+	$fact: 1;
+	@if $num > 0{
+		@for $i from 1 through $num {
+			$fact: $fact * $i;
+		}
+	}
+	@return $fact;
+}
+
+@function _to_unitless_rad($angle) {
+	@if unit($angle) == "deg" {
+		$angle: $angle / 180deg * $pi;
+	}
+	@if unit($angle) == "rad" {
+		$angle: $angle / 1rad;
+	}
+	@return $angle;
+}
+
+@function sin($angle){
+	$a: _to_unitless_rad($angle);
+	$sin: $a;
+	@for $n from 1 through $_precision {
+		$sin: $sin + (pow(-1, $n) / fact(2 * $n + 1) ) * pow($a, (2 * $n + 1));
+	}
+	@return $sin;
+}
+
+@function cos($angle){
+	$a: _to_unitless_rad($angle);
+	$cos: 1;
+	@for $n from 1 through $_precision {
+		$cos: $cos + ( pow(-1,$n) / fact(2*$n) ) * pow($a,2*$n);
+	}
+	@return $cos;
+}
+
+@function tan($angle){
+	@return sin($angle) / cos($angle);
+}
+
+
+
+/* Clock */
+$clockSize: 300px;
+
+$clockPadding: $clockSize/60;
+$clockBorderWidth: $clockSize * 0.035;
+$digitsSize: round($clockSize / 10);
+
+$numOfMinuteMarks: 60;
+$radius: 360 / $numOfMinuteMarks;
+
+$handsCircleSize: round($clockSize/20);
+
+$handHourLength: round($clockSize * 0.3);
+$handHourWidth: even($handsCircleSize * 0.5);
+
+$handMinuteLength: round($clockSize * 0.4);
+$handMinuteWidth: even($handsCircleSize * 0.35);
+
+$handSecondLength: $handMinuteLength * 1.1;
+$handSecondWidth: ceil($clockSize/300);
+
+$S: (
+		x: ($clockSize - $clockPadding)/2,
+		y: ($clockSize - $clockPadding)/2
+);
+$A: (
+		x: ($clockSize - $clockPadding)/2,
+		y: 0
+);
+$u: (
+		x: -1 * map-get($S, x),
+		y: -1 * map-get($S, y)
+);
+
+.clock{ font-family: "Droid Serif", serif; display: inline-block; width: $clockSize; height: $clockSize; border-radius: 100%; position: absolute; top: 50%; left: 50%; margin-top: -$clockSize/2 - $clockBorderWidth; margin-left: -$clockSize/2 - $clockBorderWidth; ;
+		&__marks{ list-style: none; position: absolute; top: 0; left: 0; margin: 0; padding: 0;
+				li{ display: block; position: absolute;
+						&:before{ content: ""; display: block; width: 1px; height: 6px; position: absolute; top: 0; left: 0; background: #000 }
+						&:after{ font-size: $digitsSize; line-height: 1; position: absolute; top: $digitsSize*0.4; width: 50px; left: -25px; text-align: center; -webkit-font-smoothing: antialiased; }
+						
+						@for $i from 1 through $numOfMinuteMarks{
+							$B: (
+									x: -(map-get($A, y) + map-get($u, y)) * sin(radian($i * $radius))  -  map-get($u, x) + $clockPadding/2,
+									y: (map-get($A, y) + map-get($u, y)) * cos(radian($i * $radius))  -  map-get($u, y) + $clockPadding/2
+							);
+							&:nth-child(#{$i}){ left: map-get($B, x); top: map-get($B, y); transform: rotate(#{$i * $radius}deg);
+
+						}
+					}
+				}
+		}
+
+		&__hands{ width: $handsCircleSize; height: $handsCircleSize; border-radius: 100%; background: #6C5116; box-sizing: border-box; position: absolute; left: 50%; top: 50%; margin-left: -$handsCircleSize/2; margin-top: -$handsCircleSize/2; transform: rotate(180deg); }
+
+		&__hand{ transform-origin: top center; background: #000; position: absolute; top: $handsCircleSize/2; transition: transform 0.2s;
+				 &:before{ content: ""; display: block; width: 0; height: 0; position: absolute; }
+				&:after{ content: ""; display: block; position: absolute; background: #000; }
+
+				&--hour{ width: $handHourWidth; height: $handHourLength; left: $handsCircleSize/2 - $handHourWidth/2;
+						&:before{ bottom: -2 * floor($handHourWidth*0.8); border: solid transparent; border-width: floor($handHourWidth*0.8) $handHourWidth/2; border-top-color: #000; }
+						&:after{ width: $handHourWidth; height: $handHourLength/5; top: -$handHourLength/5; }
+				}
+
+				&--minute{ width: $handMinuteWidth; height: $handMinuteLength; left: $handsCircleSize/2 - $handMinuteWidth/2;
+						&:before{ bottom: -2 * floor($handMinuteWidth*0.8); border: solid transparent; border-width: floor($handMinuteWidth*0.8) $handMinuteWidth/2; border-top-color: #000; }
+						&:after{ width: $handMinuteWidth; height: $handMinuteLength/5; top: -$handMinuteLength/5; }
+				}
+
+				&--second{ width: $handSecondWidth; height: $handSecondLength; left: $handsCircleSize/2 - $handSecondWidth/2;
+						&:before{ top: -$handSecondLength*0.33; border: 0; width: $handSecondWidth + 2; height: $handSecondLength*0.25; background: #000; left: -1px; }
+						&:after{ width: $handSecondWidth; height: $handSecondLength/5; top: -$handSecondLength/5; }
+				}
+		}
+}

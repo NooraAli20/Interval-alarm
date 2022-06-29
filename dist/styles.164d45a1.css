@@ -1,0 +1,1069 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+/* MIXINS */
+/* VARIABLES */
+/* colors */
+/* stylings */
+/* COMPONENTS */
+:root {
+  font-family: "PT Sans", sans-serif;
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+/* MIXINS */
+/* VARIABLES */
+/* colors */
+/* stylings */
+/* COMPONENTS */
+/* MIXINS */
+/* VARIABLES */
+/* colors */
+/* stylings */
+/* COMPONENTS */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #eeeeee;
+  height: 100vh;
+  width: 100vw;
+}
+form a {
+  height: 2rem;
+  width: 2rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2.5rem;
+}
+form a#decrease {
+  background-image: url(/arrow-left-black.f6ef77ff.svg);
+}
+form a#increase {
+  background-image: url(/arrow-right-black.c4409758.svg);
+}
+form h1 {
+  margin: 0 auto;
+  z-index: 99;
+}
+form #set-time-length {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+form #time-checkboxes {
+  margin: 3rem auto 2rem;
+  /* Customized checkboxes */
+}
+form #time-checkboxes label {
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  text-align: left;
+  /* Hides default checkbox and puts it on top of the visible checkbox, gives illusion of clicking the visible checkbox
+  when in fact clicking the input-element */
+  /* Creates a checkbox */
+}
+form #time-checkboxes label input {
+  position: absolute;
+  left: 0rem;
+  cursor: pointer;
+  z-index: 9999;
+  opacity: 0;
+  height: 25px;
+  width: 25px;
+  /* Black background when the checkbox is checked */
+  /* Shows the checkmark when checked */
+}
+form #time-checkboxes label input:checked ~ .checkmark {
+  background-color: #000000;
+}
+form #time-checkboxes label input:checked ~ .checkmark:after {
+  display: block;
+}
+form #time-checkboxes label .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgba(238, 238, 238, 0);
+  border: 1px solid #000000;
+  transition: all 0.2s ease;
+  border-radius: 3px;
+  /* Creates the checkmark, invisible when not checked */
+  /* Styles the X */
+}
+form #time-checkboxes label .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+form #time-checkboxes label .checkmark:after {
+  font-family: sans-serif;
+  content: "X";
+  font-size: 1rem;
+  color: #ffffff;
+  left: 7px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+}
+
+button {
+  appearance: none;
+  background: none;
+  display: inline-block;
+  padding: 0.5rem 4.5rem;
+  border: 1px solid #000000;
+  color: #000000;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 24px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: bold;
+}
+
+/* MIXINS */
+/* VARIABLES */
+/* colors */
+/* stylings */
+/* COMPONENTS */
+#break-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #000000;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+}
+
+#breakimage {
+  position: absolute;
+  top: 38.5rem;
+}
+
+#break-countdown {
+  position: absolute;
+  display: flex;
+  top: 48rem;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: white;
+}
+
+p {
+  position: absolute;
+  top: 35rem;
+  font-size: 24px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+#pause {
+  position: absolute;
+  top: 52.5rem;
+  opacity: 0.6;
+  appearance: none;
+  background: none;
+  display: inline-block;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  z-index: 2;
+}
+
+.svgg {
+  position: absolute;
+  animation: pulse 2s infinite;
+  border-radius: 50%;
+}
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.205);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.205);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.781);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+
+#app {
+  background-color: #000;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: black;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: black;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+input[check] {
+  background-image: "../SVGs/navicon-black.svg";
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#NavBar {
+  position: absolute;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#NavBar li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+/* Navigation end */
+/* Math functions */
+/* Clock */
+.clock {
+  font-family: "Droid Serif", serif;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -160.5px;
+  margin-left: -160.5px;
+}
+.clock__marks {
+  list-style: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+.clock__marks li {
+  display: block;
+  position: absolute;
+}
+.clock__marks li:before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 6px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+}
+.clock__marks li:after {
+  font-size: 30px;
+  line-height: 1;
+  position: absolute;
+  top: 12px;
+  width: 50px;
+  left: -25px;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+.clock__marks li:nth-child(1) {
+  left: 165.417948332px;
+  top: 3.3080204332px;
+  transform: rotate(6deg);
+}
+.clock__marks li:nth-child(2) {
+  left: 180.6669743956px;
+  top: 5.7232288918px;
+  transform: rotate(12deg);
+}
+.clock__marks li:nth-child(3) {
+  left: 195.5800066703px;
+  top: 9.7191638465px;
+  transform: rotate(18deg);
+}
+.clock__marks li:nth-child(4) {
+  left: 209.9936548537px;
+  top: 15.2520449977px;
+  transform: rotate(24deg);
+}
+.clock__marks li:nth-child(5) {
+  left: 223.75px;
+  top: 22.2612529418px;
+  transform: rotate(30deg);
+}
+.clock__marks li:nth-child(6) {
+  left: 236.6983247131px;
+  top: 30.6699933297px;
+  transform: rotate(36deg);
+}
+.clock__marks li:nth-child(7) {
+  left: 248.6967644379px;
+  top: 40.3861382421px;
+  transform: rotate(42deg);
+}
+.clock__marks li:nth-child(8) {
+  left: 259.6138617579px;
+  top: 51.3032355621px;
+  transform: rotate(48deg);
+}
+.clock__marks li:nth-child(9) {
+  left: 269.3300066703px;
+  top: 63.3016752869px;
+  transform: rotate(54deg);
+}
+.clock__marks li:nth-child(10) {
+  left: 277.7387470582px;
+  top: 76.25px;
+  transform: rotate(60deg);
+}
+.clock__marks li:nth-child(11) {
+  left: 284.7479550023px;
+  top: 90.0063451463px;
+  transform: rotate(66deg);
+}
+.clock__marks li:nth-child(12) {
+  left: 290.2808361535px;
+  top: 104.4199933297px;
+  transform: rotate(72deg);
+}
+.clock__marks li:nth-child(13) {
+  left: 294.2767711082px;
+  top: 119.3330256044px;
+  transform: rotate(78deg);
+}
+.clock__marks li:nth-child(14) {
+  left: 296.6919795668px;
+  top: 134.582051668px;
+  transform: rotate(84deg);
+}
+.clock__marks li:nth-child(15) {
+  left: 297.5px;
+  top: 150.px;
+  transform: rotate(90deg);
+}
+.clock__marks li:nth-child(16) {
+  left: 296.6919795668px;
+  top: 165.417948332px;
+  transform: rotate(96deg);
+}
+.clock__marks li:nth-child(17) {
+  left: 294.2767711082px;
+  top: 180.6669743956px;
+  transform: rotate(102deg);
+}
+.clock__marks li:nth-child(18) {
+  left: 290.2808361535px;
+  top: 195.5800066703px;
+  transform: rotate(108deg);
+}
+.clock__marks li:nth-child(19) {
+  left: 284.7479550023px;
+  top: 209.9936548537px;
+  transform: rotate(114deg);
+}
+.clock__marks li:nth-child(20) {
+  left: 277.7387470582px;
+  top: 223.75px;
+  transform: rotate(120deg);
+}
+.clock__marks li:nth-child(21) {
+  left: 269.3300066703px;
+  top: 236.6983247132px;
+  transform: rotate(126deg);
+}
+.clock__marks li:nth-child(22) {
+  left: 259.6138617579px;
+  top: 248.6967644379px;
+  transform: rotate(132deg);
+}
+.clock__marks li:nth-child(23) {
+  left: 248.6967644379px;
+  top: 259.6138617579px;
+  transform: rotate(138deg);
+}
+.clock__marks li:nth-child(24) {
+  left: 236.6983247131px;
+  top: 269.3300066702px;
+  transform: rotate(144deg);
+}
+.clock__marks li:nth-child(25) {
+  left: 223.75px;
+  top: 277.738747058px;
+  transform: rotate(150deg);
+}
+.clock__marks li:nth-child(26) {
+  left: 209.9936548537px;
+  top: 284.7479550018px;
+  transform: rotate(156deg);
+}
+.clock__marks li:nth-child(27) {
+  left: 195.5800066704px;
+  top: 290.2808361524px;
+  transform: rotate(162deg);
+}
+.clock__marks li:nth-child(28) {
+  left: 180.6669743959px;
+  top: 294.2767711058px;
+  transform: rotate(168deg);
+}
+.clock__marks li:nth-child(29) {
+  left: 165.4179483327px;
+  top: 296.6919795615px;
+  transform: rotate(174deg);
+}
+.clock__marks li:nth-child(30) {
+  left: 150.0000000015px;
+  top: 297.4999999888px;
+  transform: rotate(180deg);
+}
+.clock__marks li:nth-child(31) {
+  left: 134.5820516712px;
+  top: 296.6919795439px;
+  transform: rotate(186deg);
+}
+.clock__marks li:nth-child(32) {
+  left: 119.3330256111px;
+  top: 294.2767710622px;
+  transform: rotate(192deg);
+}
+.clock__marks li:nth-child(33) {
+  left: 104.4199933433px;
+  top: 290.280836063px;
+  transform: rotate(198deg);
+}
+.clock__marks li:nth-child(34) {
+  left: 90.0063451733px;
+  top: 284.747954828px;
+  transform: rotate(204deg);
+}
+.clock__marks li:nth-child(35) {
+  left: 76.2500000526px;
+  top: 277.7387467288px;
+  transform: rotate(210deg);
+}
+.clock__marks li:nth-child(36) {
+  left: 63.3016753872px;
+  top: 269.330006059px;
+  transform: rotate(216deg);
+}
+.clock__marks li:nth-child(37) {
+  left: 51.3032357503px;
+  top: 259.6138606426px;
+  transform: rotate(222deg);
+}
+.clock__marks li:nth-child(38) {
+  left: 40.3861385893px;
+  top: 248.6967624355px;
+  transform: rotate(228deg);
+}
+.clock__marks li:nth-child(39) {
+  left: 30.6699939599px;
+  top: 236.6983211724px;
+  transform: rotate(234deg);
+}
+.clock__marks li:nth-child(40) {
+  left: 22.2612540684px;
+  top: 223.7499938294px;
+  transform: rotate(240deg);
+}
+.clock__marks li:nth-child(41) {
+  left: 15.2520469828px;
+  top: 209.9936442473px;
+  transform: rotate(246deg);
+}
+.clock__marks li:nth-child(42) {
+  left: 9.7191672967px;
+  top: 195.5799886772px;
+  transform: rotate(252deg);
+}
+.clock__marks li:nth-child(43) {
+  left: 5.7232348105px;
+  top: 180.6669442509px;
+  transform: rotate(258deg);
+}
+.clock__marks li:nth-child(44) {
+  left: 3.3080304606px;
+  top: 165.4178984283px;
+  transform: rotate(264deg);
+}
+.clock__marks li:nth-child(45) {
+  left: 2.5000167872px;
+  top: 149.9999183226px;
+  transform: rotate(270deg);
+}
+.clock__marks li:nth-child(46) {
+  left: 3.3080482186px;
+  top: 134.5819194363px;
+  transform: rotate(276deg);
+}
+.clock__marks li:nth-child(47) {
+  left: 5.7232743822px;
+  top: 119.33281375px;
+  transform: rotate(282deg);
+}
+.clock__marks li:nth-child(48) {
+  left: 9.7192375496px;
+  top: 104.4196572849px;
+  transform: rotate(288deg);
+}
+.clock__marks li:nth-child(49) {
+  left: 15.2521632202px;
+  top: 90.0058171954px;
+  transform: rotate(294deg);
+}
+.clock__marks li:nth-child(50) {
+  left: 22.2614407606px;
+  top: 76.249178147px;
+  transform: rotate(300deg);
+}
+.clock__marks li:nth-child(51) {
+  left: 30.6702889724px;
+  top: 63.3004071777px;
+  transform: rotate(306deg);
+}
+.clock__marks li:nth-child(52) {
+  left: 40.3865994959px;
+  top: 51.3012954376px;
+  transform: rotate(312deg);
+}
+.clock__marks li:nth-child(53) {
+  left: 51.303949078px;
+  top: 40.3831941388px;
+  transform: rotate(318deg);
+}
+.clock__marks li:nth-child(54) {
+  left: 63.3027699905px;
+  top: 30.6655607231px;
+  transform: rotate(324deg);
+}
+.clock__marks li:nth-child(55) {
+  left: 76.2516662848px;
+  top: 22.2546296642px;
+  transform: rotate(330deg);
+}
+.clock__marks li:nth-child(56) {
+  left: 90.0088621578px;
+  top: 15.2422204511px;
+  transform: rotate(336deg);
+}
+.clock__marks li:nth-child(57) {
+  left: 104.4237674994px;
+  top: 9.7046931386px;
+  transform: rotate(342deg);
+}
+.clock__marks li:nth-child(58) {
+  left: 119.338644731px;
+  top: 5.7020593817px;
+  transform: rotate(348deg);
+}
+.clock__marks li:nth-child(59) {
+  left: 134.590360358px;
+  top: 3.2772540643px;
+  transform: rotate(354deg);
+}
+.clock__marks li:nth-child(60) {
+  left: 150.0122042905px;
+  top: 2.4555694538px;
+  transform: rotate(360deg);
+}
+.clock__hands {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background: #6C5116;
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -7.5px;
+  margin-top: -7.5px;
+  transform: rotate(180deg);
+}
+.clock__hand {
+  transform-origin: top center;
+  background: #000;
+  position: absolute;
+  top: 7.5px;
+  transition: transform 0.2s;
+}
+.clock__hand:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.clock__hand:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #000;
+}
+.clock__hand--hour {
+  width: 8px;
+  height: 90px;
+  left: 3.5px;
+}
+.clock__hand--hour:before {
+  bottom: -12px;
+  border: solid transparent;
+  border-width: 6px 4px;
+  border-top-color: #000;
+}
+.clock__hand--hour:after {
+  width: 8px;
+  height: 18px;
+  top: -18px;
+}
+.clock__hand--minute {
+  width: 6px;
+  height: 120px;
+  left: 4.5px;
+}
+.clock__hand--minute:before {
+  bottom: -8px;
+  border: solid transparent;
+  border-width: 4px 3px;
+  border-top-color: #000;
+}
+.clock__hand--minute:after {
+  width: 6px;
+  height: 24px;
+  top: -24px;
+}
+.clock__hand--second {
+  width: 1px;
+  height: 132px;
+  left: 7px;
+}
+.clock__hand--second:before {
+  top: -43.56px;
+  border: 0;
+  width: 3px;
+  height: 33px;
+  background: #000;
+  left: -1px;
+}
+.clock__hand--second:after {
+  width: 1px;
+  height: 26.4px;
+  top: -26.4px;
+}
+
+#circles {
+  background: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100vw;
+  height: 80vh;
+}
+#circles img {
+  position: absolute;
+  top: 3.5rem;
+}
+#circles .circle1 {
+  width: 278px;
+  height: 278px;
+  background: #eeeeee;
+  border-radius: 50%;
+  border: solid 1px #000000;
+}
+#circles .circle2 {
+  position: absolute;
+  width: 254px;
+  height: 254px;
+  background: #eeeeee;
+  border-radius: 50%;
+  border: solid 1px #000000;
+}
+#circles .circle3 {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  background: #eeeeee;
+  border-radius: 50%;
+  border: solid 1px #000000;
+}
+#circles .circle4 {
+  position: absolute;
+  width: 206px;
+  height: 206px;
+  background: #eeeeee;
+  border-radius: 50%;
+  border: solid 1px #000000;
+}
+#circles .circle5 {
+  position: absolute;
+  width: 183px;
+  height: 183px;
+  background: #eeeeee;
+  border-radius: 50%;
+  border: solid 1px #000000;
+}
+#circles .circle6 {
+  position: absolute;
+  width: 159px;
+  height: 159px;
+  background: #eeeeee;
+  border-radius: 50%;
+  border: solid 1px #000000;
+}
+#circles .circle7 {
+  position: absolute;
+  width: 135px;
+  height: 135px;
+  background: #eeeeee;
+  border-radius: 50%;
+  border: solid 1px #000000;
+}
+#circles .circle8 {
+  position: absolute;
+  width: 111px;
+  height: 111px;
+  background: #eeeeee;
+  border-radius: 50%;
+  border: solid 1px #000000;
+}
+#circles .circle9 {
+  position: absolute;
+  width: 87px;
+  height: 87px;
+  background: #eeeeee;
+  border-radius: 50%;
+  border: solid 1px #000000;
+}
+#circles .circle10 {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background: #eeeeee;
+  border-radius: 50%;
+  border: solid 1px #000000;
+}
+#circles .circle11 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #eeeeee;
+  border-radius: 50%;
+  border: solid 1px #000000;
+}
+
+/* MIXINS */
+/* VARIABLES */
+/* colors */
+/* stylings */
+/* COMPONENTS */
+#alarmRinging {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #000000;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+}
+#alarmRinging button {
+  position: absolute;
+  bottom: 28rem;
+  opacity: 0.6;
+  appearance: none;
+  background: none;
+  display: inline-block;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+#alarmRinging img {
+  position: absolute;
+}
+#alarmRinging #svgg {
+  animation: pulse 2.5s infinite;
+  border-radius: 50%;
+}
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.205);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.205);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.781);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+
+/* MIXINS */
+/* VARIABLES */
+/* colors */
+/* stylings */
+/* COMPONENTS */
+#digital-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #eeeeee;
+  height: 100vh;
+  width: 100vw;
+}
+#digital-timer img {
+  position: absolute;
+  top: 3.5rem;
+}
+#digital-timer h1 {
+  margin-bottom: 18rem;
+}
+
+body {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeeeee;
+}
+
+progress[value] {
+  border: none;
+  width: 100vh;
+  height: 100vh;
+  transform: rotate(-90deg);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #222222;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: #eeeeee;
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+#set-timer-form {
+  display: flex;
+  text-align: center;
+}
+
+#visual-page {
+  display: flex;
+}
+#visual-page #progbar {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.76);
+  height: 100vh;
+  width: 100vw;
+}
+
+#talTillOrd {
+  display: flex;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  width: 100vw;
+}
+
+#digital-timer {
+  display: flex;
+}
+
+#break-page {
+  display: flex;
+}
+
+#stop {
+  position: absolute;
+  left: 30;
+  bottom: 11.5rem;
+  opacity: 0.6;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+#alarmRinging {
+  display: flex;
+}
+
+#app {
+  width: 100vw;
+}
+
+#NavBar {
+  background: #222222b2;
+  width: 100vw;
+  height: 100vh;
+}
+
+#NavBar li {
+  color: white;
+  text-align: center;
+  margin-left: -6.5rem;
+  padding-top: 2rem;
+}
+
+#divToRenderIn {
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=/styles.164d45a1.css.map */

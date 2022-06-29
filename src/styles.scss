@@ -1,0 +1,99 @@
+@import "./styles/typography.scss";
+@import "./styles/variables.scss";
+@import "./styles/settime.scss";
+@import "./styles/startbutton.scss";
+@import "./styles/break-view.scss";
+@import "./styles/analog.scss";
+@import "./styles/circles.scss";
+@import "./styles/alarmring.scss";
+@import "./styles/digital-timer.scss";
+
+body {
+  margin: 0 auto;
+  @include center;
+  background-color: $grey;
+}
+
+//progress bar//
+
+progress[value] {
+  border: none;
+  width: 100vh;
+  height: 100vh;
+  transform: rotate(-90deg);
+
+  // Reset the default appearance //
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #222222;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: #eeeeee;
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+#set-timer-form {
+  display: flex;
+  text-align: center;
+}
+#visual-page {
+  display: flex;
+  #progbar {
+    position:absolute;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.76);
+    height: 100vh;
+    width: 100vw;
+  }
+}
+#talTillOrd {
+  display: flex;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  width: 100vw;
+}
+#digital-timer {
+  display: flex;
+}
+#break-page {
+  display: flex;
+}
+#stop {
+  position: absolute;
+  left: 30;
+  bottom: 11.5rem;
+  opacity: $opacityLevel;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+#alarmRinging {
+  display: flex;
+}
+
+#app {
+  width: 100vw;
+}
+
+#NavBar {
+  background: #222222b2;
+  width: 100vw;
+  height: 100vh;
+}
+
+#NavBar li {
+  color: white;
+  text-align: center;
+  margin-left:-6.5rem;
+  padding-top: 2rem;
+}
+
+#divToRenderIn {
+  margin: 0 auto;
+}

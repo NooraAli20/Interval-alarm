@@ -1,0 +1,111 @@
+#circles {
+    background: $grey;
+  @include center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100vw;
+  height: 80vh;
+
+    img {
+        position: absolute;
+        top: 3.5rem;
+    }
+
+    .circle1 {
+        width: 278px;
+        height: 278px;
+        background: $grey;
+        border-radius: 50%;
+        border: solid 1px $black;
+    }
+    .circle2 {
+        position: absolute;
+        width: 254px;
+        height: 254px;
+        background: $grey;
+        border-radius: 50%;
+        border: solid 1px $black;
+        }
+
+    .circle3 {
+        position: absolute;
+    width: 230px;
+    height: 230px;
+    background: $grey;
+    border-radius: 50%;
+    border: solid 1px $black;
+    }
+
+    .circle4 {
+        position: absolute;
+    width: 206px;
+    height: 206px;
+    background: $grey;
+    border-radius: 50%;
+    border: solid 1px $black;
+    }
+
+    .circle5 {
+        position: absolute;
+    width: 183px;
+    height: 183px;
+    background: $grey;
+    border-radius: 50%;
+    border: solid 1px $black;
+    }
+
+    .circle6 {
+        position: absolute;
+    width: 159px;
+    height: 159px;
+    background: $grey;
+    border-radius: 50%;
+    border: solid 1px $black;
+    }
+
+    .circle7 {
+        position: absolute;
+    width: 135px;
+    height: 135px;
+    background: $grey;
+    border-radius: 50%;
+    border: solid 1px $black;
+    }
+
+    .circle8 {
+        position: absolute;
+    width: 111px;
+    height: 111px;
+    background: $grey;
+    border-radius: 50%;
+    border: solid 1px $black;
+    }
+
+    .circle9 {
+        position: absolute;
+    width: 87px;
+    height: 87px;
+    background: $grey;
+    border-radius: 50%;
+    border: solid 1px $black;
+    }
+
+    .circle10 {
+        position: absolute;
+    width: 64px;
+    height: 64px;
+    background: $grey;
+    border-radius: 50%;
+    border: solid 1px $black;
+    }
+
+    .circle11 {
+        position: absolute;
+    width: 40px;
+    height: 40px;
+    background: $grey;
+    border-radius: 50%;
+    border: solid 1px $black;
+    }
+}

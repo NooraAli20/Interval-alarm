@@ -1,0 +1,18 @@
+/* MIXINS */
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* VARIABLES */
+
+/* colors */
+$black: #000000;
+$grey: #eeeeee;
+$white: #ffffff;
+
+/* stylings */
+$opacityLevel: 0.6;
+
+/* COMPONENTS */

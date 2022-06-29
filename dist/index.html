@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval App</title>
+    <link rel="stylesheet" href="/styles.164d45a1.css">
+<script src="/styles.164d45a1.js"></script></head>
+<body>
+    <div id="divToRenderIn" style="width:100%;justify-content: center;">
+
+    </div>
+    <button id="stop" style="display:none">ABORT TIMER</button>
+    <div style="display: none;" id="holderDiv">
+
+        <!--Loading Page-->
+        <div id="app">
+            <a href="#" id="startImage">
+                <img src="/LogoFirstPage-white.029a592e.svg" alt="">
+            </a>
+            <img src="/IntervalLogoText-white.c3307f7a.svg" alt="">
+        </div>
+
+        <!-- menu start -->
+        <section id="menu">
+            <div>
+                <a href=""></a><img src="/navicon-white.90dacfda.svg">
+            </div>
+        </section>
+
+        <!-- set time form start -->
+        <section id="setTimeFormSection">
+            <form id="set-timer-form">
+                <article id="set-time-length">
+                    <a id="decrease"></a>
+                    <h1 id="time-amount"></h1>
+                    <a id="increase"></a>
+                </article>
+                <span>minutes</span>
+                <article id="time-checkboxes">
+                    <label for="intervals" class="checkbox-container">intervals
+                        <input id="intervals-check" type="checkbox" name="intervals">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label for="break-interval" class="checkbox-container">5 min break / interval
+                        <input id="break-check" type="checkbox" name="break-interval">
+                        <span class="checkmark"></span>
+                    </label>
+                </article>
+                <button id="startTimerBtn" type="submit">start timer</button>
+            </form>
+        </section>
+
+        <!-- Alarming Page -->
+        <section id="alarmRinging">
+            <img class="svg" src="/timesup-white.0561c58f.svg" alt="">
+            <img class="svg" src="/ellipse1.61d19a5d.svg" alt="">
+            <img class="svg" src="/ellipse2.21c71375.svg" alt="">
+            <img class="svg" src="/ellipse3.455296d6.svg" alt="">
+            <img class="svg" src="/ellipse4.346789ef.svg" alt="">
+            <button id="Back2Timer">SET NEW TIMER</button>
+        </section>
+
+        <!-- visual page start -->
+        <section id="visual-page">
+            <div id="progbar" style="height: 100vh; width:100%;background-color: black;"></div>
+        </section>
+
+        <!-- Analogklocka -->
+        <section id="analogClock">
+            <div class="clock">
+                <ul class="clock__marks"></ul>      
+                <div class="clock__hands">
+                    <div class="clock__hand clock__hand--minute"></div>
+                    <div class="clock__hand clock__hand--second"></div>
+                </div>      
+            </div>
+        </section>
+
+        <!-- Tal till Ord -->
+        <div id="talTillOrd" style="display: flex;justify-content:center;align-items:center;height:100vh; width:100%">
+
+        </div>
+
+        <!--Circle Clock-->
+        <section id="circles" style="display: flex;justify-content:center;align-items:center;height:100vh; width:100%">
+        </section>
+
+        <!--Break View-->
+        <section id="break-page">
+            <img id="breakimage" src="/pause-and-breathe-white.c474d28a.svg" alt="pause">
+            <div id="break-countdown">05:00</div>
+            <button id="pause" type="button">NO PAUSE, GO NOW!</button>
+            <img class="svgg" src="/ellipse1.61d19a5d.svg" alt="">
+            <img class="svgg" src="/ellipse2.21c71375.svg" alt="">
+            <img class="svgg" src="/ellipse3.455296d6.svg" alt="">
+            <img class="svgg" src="/ellipse4.346789ef.svg" alt="">
+        </section>
+
+        <!--Digital Timer-->
+        <section id="digital-timer" style="justify-content: center; display: flex;">
+            <img src="/nav-interval-black.dd54d6f9.svg" alt="interval-black">
+            <h1 id="digitalTime"></h1>
+        </section>
+
+        <!--Alarm View-->
+        <section id="alarmRinging">
+            <button onclick="" id="Back2Timer">SET NEW TIMER</button>
+            <img class="svgg" src="/timesup-white.0561c58f.svg" alt="">
+            <img class="svgg" src="/ellipse1.61d19a5d.svg" alt="">
+            <img class="svgg" src="/ellipse2.21c71375.svg" alt=""> 
+            <img class="svgg" src="/ellipse3.455296d6.svg" alt="">
+            <img class="svgg" src="/ellipse4.346789ef.svg" alt="">
+        </section>
+        
+       
+    </div>
+    <script src="/src.77de5100.js"></script>
+</body>
+</html>

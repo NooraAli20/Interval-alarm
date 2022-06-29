@@ -1,0 +1,13 @@
+button {
+  appearance: none;
+  background: none;
+  display: inline-block;
+  padding: 0.5rem 4.5rem;
+  border: 1px solid $black;
+  color: $black;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 24px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: bold;
+}
